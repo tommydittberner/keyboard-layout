@@ -81,7 +81,7 @@ KEYMAPS(
          Key_de_Ampersand, Key_de_Pipe, Key_de_Equals, Key_de_QuestionMark, Key_de_Circle,
          XXX,              Key_de_Tilde, Key_de_Euro,   Key_de_Plus,         Key_de_Minus,
     XXX, XXX,              Key_de_Hash,  XXX,           XXX,                 XXX,
-    XXX, ___,              XXX,          XXX,           XXX,                 XXX
+    XXX, ___,              XXX,          ___,           XXX,                 XXX
    ),
 
   [SUPER] = KEYMAP_STACKED
@@ -94,7 +94,7 @@ KEYMAPS(
          Key_de_Backspace, Key_7,        Key_8, Key_9,        Key_de_Asterisk,
          XXX,              Key_4,        Key_5, Key_6,        Key_de_Minus,
     XXX, XXX,              Key_1,        Key_2, Key_3,        Key_de_Plus,
-    XXX, XXX,              Key_de_Slash, Key_0, Key_de_Comma, Key_de_Enter
+    XXX, ___,              Key_de_Slash, Key_0, Key_de_Comma, Key_de_Enter
    ),
    
   [MOUSE] = KEYMAP_STACKED
@@ -107,7 +107,7 @@ KEYMAPS(
          XXX, XXX, XXX, XXX, XXX,
          XXX, XXX, XXX, XXX, XXX,
     XXX, XXX, XXX, XXX, XXX, XXX,
-    Key_mouseScrollDn, Key_mouseBtnR, Key_mouseScrollDn, XXX, XXX, XXX
+    Key_mouseScrollDn, Key_mouseBtnR, Key_mouseScrollR, XXX, XXX, XXX
    )
 )
 /* *INDENT-ON* */
