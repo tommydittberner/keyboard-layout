@@ -76,12 +76,12 @@ KEYMAPS(
     Key_de_ExlamationMark, Key_de_At,        Key_de_Circumflex,  Key_de_Dollar,      Key_de_Percent,
     Key_de_Asterisk,       Key_de_LeftParen, Key_de_RightParen,  Key_de_LeftBracket, Key_de_RightBracket,
     XXX,                   Key_de_LessThan,  Key_de_GreaterThan, Key_de_LeftCurly,   Key_de_RightCurly,   XXX,
-    XXX,                   XXX,              XXX,                XXX,                XXX,                 XXX,
+    ___,                   ___,              ___,                XXX,                ___,                 ___,
 
          Key_de_Ampersand, Key_de_Pipe, Key_de_Equals, Key_de_QuestionMark, Key_de_Circle,
          XXX,              Key_de_Tilde, Key_de_Euro,   Key_de_Plus,         Key_de_Minus,
     XXX, XXX,              Key_de_Hash,  XXX,           XXX,                 XXX,
-    XXX, XXX,              XXX,          XXX,           XXX,                 XXX
+    XXX, ___,              XXX,          XXX,           XXX,                 XXX
    ),
 
   [SUPER] = KEYMAP_STACKED
@@ -89,7 +89,7 @@ KEYMAPS(
     Key_de_Insert,      Key_de_Home,      Key_de_UpArrow,   Key_de_End,        Key_de_PageUp,
     Key_de_Delete,      Key_de_LeftArrow, Key_de_DownArrow, Key_de_RightArrow, Key_de_PageDown,
     Key_de_PrintScreen, XXX,              Key_de_VolumeUp,  Key_de_VolumeDown, Key_de_Mute,     XXX,
-    XXX,                XXX,              XXX,              XXX,               XXX,             XXX,
+    XXX,                XXX,              ___,              XXX,               ___,             ___,
 
          Key_de_Backspace, Key_7,        Key_8, Key_9,        Key_de_Asterisk,
          XXX,              Key_4,        Key_5, Key_6,        Key_de_Minus,
@@ -102,12 +102,12 @@ KEYMAPS(
     XXX, Key_mouseBtnP, Key_mouseUp, Key_mouseBtnN, XXX,
     XXX, Key_mouseL, Key_mouseDn, Key_mouseR, XXX,
     XXX, XXX, XXX, XXX, XXX, XXX,
-    XXX, XXX, XXX, Key_mouseBtnL, Key_mouseScrollUp, Key_mouseScrollL,
+    XXX, XXX, XXX, Key_mouseScrollL, Key_mouseBtnL, Key_mouseScrollUp,
 
          XXX, XXX, XXX, XXX, XXX,
          XXX, XXX, XXX, XXX, XXX,
     XXX, XXX, XXX, XXX, XXX, XXX,
-    Key_mouseScrollR, Key_mouseScrollDn, Key_mouseBtnR, XXX, XXX, XXX
+    Key_mouseScrollDn, Key_mouseBtnR, Key_mouseScrollDn, XXX, XXX, XXX
    )
 )
 /* *INDENT-ON* */
@@ -147,6 +147,11 @@ void setup() {
     kaleidoscope::plugin::Qukey(BASE,  KeyAddr(1, 3),  LCTRL(Key_de_F)),     // f find
     kaleidoscope::plugin::Qukey(BASE,  KeyAddr(0, 8),  LCTRL(Key_de_L)),     // l select address bar
     kaleidoscope::plugin::Qukey(BASE,  KeyAddr(1, 1),  LCTRL(Key_de_R)),     // r reload page
+
+    //ease of use
+    kaleidoscope::plugin::Qukey(BASE,  KeyAddr(2, 9),  Key_de_Semicolon),     // semi-colon
+    kaleidoscope::plugin::Qukey(BASE,  KeyAddr(2, 10), Key_de_Colon),         // colon
+
     /* todo: 
      * p = print
      * s = save or leave ß
