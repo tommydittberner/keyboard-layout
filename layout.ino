@@ -55,20 +55,20 @@ KEYMAPS(
                   Key_de_J,         Key_de_L, Key_de_U,      Key_de_Y,      Key_de_Quote,
                   Key_de_M,         Key_de_N, Key_de_E,      Key_de_I,      Key_de_O,
     Key_de_Slash, Key_de_K,         Key_de_H, Key_de_Comma,  Key_de_Period, Key_de_Minus,
-    MO(SHIFT),    Key_de_Backspace, MO(SUB),  Key_de_Delete, XXX,           Key_de_LeftAlt
+    MO(SHIFT),    Key_de_Backspace, MO(SUB),  Key_de_Delete, XXX,           Key_de_Escape
   ),
 
   [SHIFT] = KEYMAP_STACKED
   (
-    LSHIFT(Key_de_Q),      LSHIFT(Key_de_W),       LSHIFT(Key_de_F),   LSHIFT(Key_de_P), LSHIFT(Key_de_B),
-    LSHIFT(Key_de_A),      LSHIFT(Key_de_R),       LSHIFT(Key_de_S),   LSHIFT(Key_de_T), LSHIFT(Key_de_G),
-    LSHIFT(Key_de_Z),      LSHIFT(Key_de_X),       LSHIFT(Key_de_C),   LSHIFT(Key_de_D), LSHIFT(Key_de_V),        Key_de_Tick,
-    LSHIFT(Key_de_Escape), LSHIFT(Key_de_LeftGui), LSHIFT(Key_de_Tab), XXX,              LSHIFT(Key_de_Spacebar), LSHIFT(Key_de_Enter),
+    LSHIFT(Key_de_Q),           LSHIFT(Key_de_W),       LSHIFT(Key_de_F),   LSHIFT(Key_de_P), LSHIFT(Key_de_B),
+    LSHIFT(Key_de_A),           LSHIFT(Key_de_R),       LSHIFT(Key_de_S),   LSHIFT(Key_de_T), LSHIFT(Key_de_G),
+    LSHIFT(Key_de_Z),           LSHIFT(Key_de_X),       LSHIFT(Key_de_C),   LSHIFT(Key_de_D), LSHIFT(Key_de_V),        Key_de_Tick,
+    LSHIFT(Key_de_LeftControl), LSHIFT(Key_de_LeftGui), LSHIFT(Key_de_Tab), XXX,              LSHIFT(Key_de_Spacebar), LSHIFT(Key_de_Enter),
 
-                      LSHIFT(Key_de_J),         LSHIFT(Key_de_L), LSHIFT(Key_de_U),  LSHIFT(Key_de_Y), Key_de_DoubleQuote,
-                      LSHIFT(Key_de_M),         LSHIFT(Key_de_N), LSHIFT(Key_de_E),  LSHIFT(Key_de_I), LSHIFT(Key_de_O),
-    Key_de_Backslash, LSHIFT(Key_de_K),         LSHIFT(Key_de_H), Key_de_Semicolon,  Key_de_Colon,     Key_de_Underscore,
-    XXX,              LSHIFT(Key_de_Backspace), XXX,              ___,               ___,              LSHIFT(Key_de_LeftAlt)
+                      LSHIFT(Key_de_J),        LSHIFT(Key_de_L), LSHIFT(Key_de_U),     LSHIFT(Key_de_Y), Key_de_DoubleQuote,
+                      LSHIFT(Key_de_M),        LSHIFT(Key_de_N), LSHIFT(Key_de_E),     LSHIFT(Key_de_I), LSHIFT(Key_de_O),
+    Key_de_Backslash, LSHIFT(Key_de_K),        LSHIFT(Key_de_H), Key_de_Semicolon,     Key_de_Colon,     Key_de_Underscore,
+    XXX,              LCTRL(Key_de_Backspace), XXX,              LCTRL(Key_de_Delete), ___,              LSHIFT(Key_de_LeftAlt)
   ),
 
   [SUB] = KEYMAP_STACKED
@@ -76,12 +76,12 @@ KEYMAPS(
     Key_de_ExlamationMark, Key_de_At,        Key_de_Circumflex,  Key_de_Dollar,      Key_de_Percent,
     Key_de_Asterisk,       Key_de_LeftParen, Key_de_RightParen,  Key_de_LeftBracket, Key_de_RightBracket,
     XXX,                   Key_de_LessThan,  Key_de_GreaterThan, Key_de_LeftCurly,   Key_de_RightCurly,   XXX,
-    ___,                   ___,              ___,                XXX,                ___,                 ___,
+    Key_de_Escape,         ___,              ___,                XXX,                ___,                 ___,
 
          Key_de_Ampersand, Key_de_Pipe, Key_de_Equals, Key_de_QuestionMark, Key_de_Circle,
          XXX,              Key_de_Tilde, Key_de_Euro,   Key_de_Plus,         Key_de_Minus,
     XXX, XXX,              Key_de_Hash,  XXX,           XXX,                 XXX,
-    XXX, ___,              XXX,          ___,           XXX,                 XXX
+    XXX, ___,              XXX,          ___,           XXX,                 Key_de_Escape
    ),
 
   [SUPER] = KEYMAP_STACKED
@@ -151,6 +151,9 @@ void setup() {
     //ease of use
     kaleidoscope::plugin::Qukey(BASE,  KeyAddr(2, 9),  Key_de_Semicolon),     // semi-colon
     kaleidoscope::plugin::Qukey(BASE,  KeyAddr(2, 10), Key_de_Colon),         // colon
+
+    //other
+    kaleidoscope::plugin::Qukey(BASE,  KeyAddr(3, 11), Key_de_LeftAlt),       // esc -> alt
 
     /* todo: 
      * p = print
